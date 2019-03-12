@@ -6,14 +6,25 @@
 
 	<script>
 		"use script";
-		let Tf = 0;
+
+		// Перевод температуры по Цельсию в температуру по Фаренгейту
+
+		let Tf;
 		let Tc = prompt("Введите температуру в градусах по Цельсию: ");
 		if (isNaN(Tc)) {
 			alert("Вы ввели не число!");
 		} else {
 			Tf	=	(9 / 5) * Tc + 32;
 			alert(Tf);			
-		}		
+		}
+
+		// Вывод в консоль переменной admin
+
+		let admin;
+		let name = "Василий";
+		admin = name;
+		console.log(admin);
+
 	</script>
 
 </head>
