@@ -23,7 +23,7 @@
 
 		// Задание 3
 
-		let a = 5, b = -1;
+		/*let a = 5, b = -1;
 
 		if (a >= 0 && b >= 0) {
 			alert(a - b);
@@ -31,7 +31,33 @@
 			alert(a * b);
 		} else {
 			alert(a + b);
+		}*/
+
+		// Задание 4-5
+
+		function addition(argument1, argument2) {	
+			return argument1 + argument2;
 		}
+		sum = addition(parseInt(prompt("Функция сложения. Введите первое слогаемое: ")), parseInt(prompt("Введите второе слогаемое: ")));
+		alert("Сумма = " + sum);
+
+		function subtraction(argument1, argument2) {	
+			return argument1 - argument2;
+		}		
+		difference = subtraction(parseInt(prompt("Функция вычитания. Введите первое число: ")), parseInt(prompt("Введите второе число: ")));
+		alert("Разность = " + difference);
+
+		function multiplication(argument1, argument2) {	
+			return argument1 * argument2;
+		}		
+		composition = multiplication(parseInt(prompt("Функция умножения. Введите первый множитель: ")), parseInt(prompt("Введите второй множитель: ")));
+		alert("Произведение = " + composition);
+
+		function division(argument1, argument2) {	
+			return argument1 / argument2;
+		}		
+		quotient = division(parseInt(prompt("Функция деления. Введите делимое: ")), parseInt(prompt("Введите делитель: ")));
+		alert("Частное = " + quotient);
 
 	</script>
 
