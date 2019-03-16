@@ -33,34 +33,69 @@
 			alert(a + b);
 		}*/
 
-		// Задание 4-5
+		// Реализация четырёх основных арифметических операций в виде  функций (Задание 4)
 
-		function addition(argument1, argument2) {	
+		/*function addition(argument1, argument2) {	
 			return argument1 + argument2;
 		}
-		sum = addition(parseInt(prompt("Функция сложения. Введите первое слогаемое: ")), parseInt(prompt("Введите второе слогаемое: ")));
+		let sum = addition(parseInt(prompt("Функция сложения. Введите первое слогаемое: ")), parseInt(prompt("Введите второе слогаемое: ")));
 		alert("Сумма = " + sum);
 
 		function subtraction(argument1, argument2) {	
 			return argument1 - argument2;
 		}		
-		difference = subtraction(parseInt(prompt("Функция вычитания. Введите первое число: ")), parseInt(prompt("Введите второе число: ")));
+		let difference = subtraction(parseInt(prompt("Функция вычитания. Введите первое число: ")), parseInt(prompt("Введите второе число: ")));
 		alert("Разность = " + difference);
 
 		function multiplication(argument1, argument2) {	
 			return argument1 * argument2;
 		}		
-		composition = multiplication(parseInt(prompt("Функция умножения. Введите первый множитель: ")), parseInt(prompt("Введите второй множитель: ")));
+		let composition = multiplication(parseInt(prompt("Функция умножения. Введите первый множитель: ")), parseInt(prompt("Введите второй множитель: ")));
 		alert("Произведение = " + composition);
 
 		function division(argument1, argument2) {	
 			return argument1 / argument2;
 		}		
-		quotient = division(parseInt(prompt("Функция деления. Введите делимое: ")), parseInt(prompt("Введите делитель: ")));
-		alert("Частное = " + quotient);
+		let quotient = division(parseInt(prompt("Функция деления. Введите делимое: ")), parseInt(prompt("Введите делитель: ")));
+		alert("Частное = " + quotient);*/
 
+
+	// Реализовать функцию с тремя параметрами (Задание 5): 
+	// function mathOperation(arg1, arg2, operation)
+
+		function addition(argument1, argument2) {	
+			return argument1 + argument2;
+		}
+
+		function subtraction(argument1, argument2) {	
+			return argument1 - argument2;
+		}		
+
+		function multiplication(argument1, argument2) {	
+			return argument1 * argument2;
+		}		
+
+		function division(argument1, argument2) {	
+			return argument1 / argument2;
+		}		
+
+		function mathOperation(arg1, arg2, operation) {
+			switch (operation) {
+				case '+':
+					return addition(arg1, arg2);
+				case '-':
+					return subtraction(arg1, arg2);
+				case '*':
+					return multiplication(arg1, arg2);
+				case '/':
+					return division(arg1, arg2);
+			}
+		}
+		let miniCalculator = mathOperation(parseInt(prompt("Мини-калькулятор. Введите первое число: ")), parseInt(prompt("Введите второе число: ")), prompt("Введите операцию, + - * /: "));
+			
+		alert("Результат = " + miniCalculator);
 	</script>
-
+				
 </head>
 <body>
 	
