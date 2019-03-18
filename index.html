@@ -7,44 +7,95 @@
 	<script>
 		"use script";
 
-		// Перевод температуры по Цельсию в температуру по Фаренгейту
+		// Задание 1
 
-		let Tf;
-		let Tc = prompt("Введите температуру в градусах по Цельсию: ");
-		if (isNaN(Tc)) {
-			alert("Вы ввели не число!");
+		// Пример 1: потому что в префиксной форме инкрементирование производится сразу, т. е. значение сразу увеличивается на единицу и выводится
+		// Пример 2: потому что в постфиксной форме сначала присваивается значение, а потом выполняется инкрементирование
+		// Пример 3: "a" сейчас равно 2, инкрементирование префиксное, а значит к двум прибавится уже не 2, а 3
+		// Пример 4: "b" сейчас равно 1, инкрементирование постфиксное, а значит к двум прибавится 2
+		// Пример 5: потому что в третьем примере у нас "a" стало равным 3 благодаря префиксному инкрементированию
+		// Пример 6: потому что в четвертом примере "b" стало равным 3 благодаря постфиксному инкрементированию
+
+		// Задание 2
+
+		// x будет равен 5
+		// т. к. а *= 2 расшифровывается как а = а * 2
+
+		// Задание 3
+
+		/*let a = 5, b = -1;
+
+		if (a >= 0 && b >= 0) {
+			alert(a - b);
+		} else if (a < 0 && b < 0) {
+			alert(a * b);
 		} else {
-			Tf	=	(9 / 5) * Tc + 32;
-			alert(Tf);			
+			alert(a + b);
+		}*/
+
+		// Реализация четырёх основных арифметических операций в виде  функций (Задание 4)
+
+		/*function addition(argument1, argument2) {	
+			return argument1 + argument2;
+		}
+		let sum = addition(parseInt(prompt("Функция сложения. Введите первое слогаемое: ")), parseInt(prompt("Введите второе слогаемое: ")));
+		alert("Сумма = " + sum);
+
+		function subtraction(argument1, argument2) {	
+			return argument1 - argument2;
+		}		
+		let difference = subtraction(parseInt(prompt("Функция вычитания. Введите первое число: ")), parseInt(prompt("Введите второе число: ")));
+		alert("Разность = " + difference);
+
+		function multiplication(argument1, argument2) {	
+			return argument1 * argument2;
+		}		
+		let composition = multiplication(parseInt(prompt("Функция умножения. Введите первый множитель: ")), parseInt(prompt("Введите второй множитель: ")));
+		alert("Произведение = " + composition);
+
+		function division(argument1, argument2) {	
+			return argument1 / argument2;
+		}		
+		let quotient = division(parseInt(prompt("Функция деления. Введите делимое: ")), parseInt(prompt("Введите делитель: ")));
+		alert("Частное = " + quotient);*/
+
+
+	// Реализовать функцию с тремя параметрами (Задание 5): 
+	// function mathOperation(arg1, arg2, operation)
+
+		function addition(argument1, argument2) {	
+			return argument1 + argument2;
 		}
 
-		// Вывод в консоль переменной admin
+		function subtraction(argument1, argument2) {	
+			return argument1 - argument2;
+		}		
 
-		let admin;
-		let name = "Василий";
-		admin = name;
-		console.log(admin);
+		function multiplication(argument1, argument2) {	
+			return argument1 * argument2;
+		}		
 
-	// Вывод в консоль значений выражений
+		function division(argument1, argument2) {	
+			return argument1 / argument2;
+		}		
 
-		console.log(10 + 10	+ "10");  // "2010" — первых два числа сложились и потом склеились в одну строку
-		console.log(10 + "10" + 10);  // "101010" — число(10) + строка("10") = строка ("1010") и строка ("1010") + число(10) = строка ("101010")
-		console.log(10 + 10	+ +"10"); // 30 — унарный плюс +"10" переводит строку в число и тогда спокойно они суммируются
-		console.log(10 / -"");        // -Infinity — потому что "" - эта пустая строка, она становится нулем, а деление на ноль дает бесконечность
-		console.log(10 / +"2,5");     // NaN — потому что дробные числа пишутся через точку, а тут запятая - а число на строку нельзя поделить
-
-	// Являются ли данные имена переменных корректными:	
-	/*
-		let	mode = "normal";     — корректно
-		let	my_valu3 = 102;      — некорректно
-		let	3my_value3 = "102";  — некорректно
-		let	__hello__ = "world"; — некорректно
-		let	$$$	= "money";       — корректно
-		let	!0_world = true;     — некорректно
-	*/
-
+		function mathOperation(arg1, arg2, operation) {
+			switch (operation) {
+				case '+':
+					return addition(arg1, arg2);
+				case '-':
+					return subtraction(arg1, arg2);
+				case '*':
+					return multiplication(arg1, arg2);
+				case '/':
+					return division(arg1, arg2);
+			}
+		}
+		let miniCalculator = mathOperation(parseInt(prompt("Мини-калькулятор. Введите первое число: ")), parseInt(prompt("Введите второе число: ")), prompt("Введите операцию, + - * /: "));
+			
+		alert("Результат = " + miniCalculator);
 	</script>
-
+				
 </head>
 <body>
 	
