@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Practical task № 3</title>
+
+	<script>
+		"use script";
+
+		// Задание 1
+
+		let array = [
+			[{name: 'Mary', age: 23}, {name: 'Mike', age: 45}, {name: 'Nick', age: 11}],
+			[{name: 'Adam', age: 56}, {name: 'Sara', age: 21}, {name: 'Don', age: 22}],
+			[{name: 'Karl', age: 34}, {name: 'Marta', age: 76}, {name: 'John', age: 19}]
+		];
+
+		let newArray = JSON.parse(JSON.stringify(array));
+
+		newArray[0][0].name = 'Pit'; // проверка на независимость
+
+		console.log(array);
+		console.log(newArray);
+
+
+	</script>
+				
+</head>
+<body>
+	
+</body>
+</html>
