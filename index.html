@@ -5,7 +5,7 @@
 	<title>Practical task № 3</title>
 
 	<script>
-		"use script";
+		//"use script";
 
 		// Задание 1
 
@@ -26,17 +26,23 @@
 
 		// Задание 2
 
-		function countBasketPrice() {
-			let basket = [
-				{product: 'Book', sum: 2, price: 20},
-				{product: 'Cup', sum: 1, price: 5},
-				{product: 'Cream', sum: 1, price: 10}
-			];
-
-
+		function countBasketPrice(basket) {
+			let total=0, subtotal=0;
+		  	for (let i = 0; i < basket.length; i++) {	  
+		  		subtotal = basket[i].price * basket[i].sum;
+		  		total += subtotal;
+			}	
+			return total;
 		}
 
-	
+		let basket = [
+			{product: 'Book', sum: 2, price: 20},
+			{product: 'Cup', sum: 1, price: 5},
+			{product: 'Cream', sum: 1, price: 10}
+		];		
+
+		alert ("Сумма в корзине: " + countBasketPrice(basket));
+
 
 	</script>
 				
