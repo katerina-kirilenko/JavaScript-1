@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Practical task № 4</title>
+
+	<script>
+		"use script";
+
+		// Задание 1
+
+
+function NumberDecomposition(numeric) {
+	var numbers = {};
+
+	numbers.hundreds = Math.trunc(numeric / 100);
+	numbers.dozens = Math.trunc((numeric - numbers.hundreds*100) / 10);
+	numbers.units = numeric - (numbers.hundreds*100 + numbers.dozens*10);
+	
+	if (numeric >= 0 && numeric <= 999) {
+		switch (numeric.toString().length) {
+			case 3:
+				alert('Сотни: ' + numbers.hundreds + ' Десятки: ' + numbers.dozens + ' Единицы: ' + numbers.units);
+				break;	
+			case 2:
+				alert('Десятки: ' + numbers.dozens + ' Единицы: ' + numbers.units);
+				break;
+			case 1:
+				alert('Единицы: ' + numbers.units);
+				break;
+			}
+	} else {
+		console.log( 'Введено некорректное число' );
+	}
+}
+
+var numeric = parseInt(prompt('Введите число от 0 до 999: '));
+NumberDecomposition(numeric);
+
+
+	</script>
+				
+</head>
+<body>
+	
+</body>
+</html>
