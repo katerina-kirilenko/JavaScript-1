@@ -9,8 +9,7 @@
 
 		// Задание 1
 
-
-function NumberDecomposition(numeric) {
+/*function NumberDecomposition(numeric) {
 	var numbers = {};
 
 	numbers.hundreds = Math.trunc(numeric / 100);
@@ -35,8 +34,73 @@ function NumberDecomposition(numeric) {
 }
 
 var numeric = parseInt(prompt('Введите число от 0 до 999: '));
-NumberDecomposition(numeric);
+NumberDecomposition(numeric);*/
 
+
+
+		// Задание 2
+
+		let productList = [
+			{name: 'Java 8. Полное руководство. Герберт Шилдт, 2015', price: 48.70},
+			{name: 'Мужчины с Марса, женщины с Венеры (м). Джон Грэй, 2018', price: 15.30},
+			{name: 'Открытка "Люблю тебя"', price: 1.00},
+			{name: 'Кружка "Котики" (арт. 728)', price: 12.00},
+			{name: 'Игра "Крокодил"', price: 24.00},
+			{name: 'Подарочный набор "BY-BOX"', price: 27.10}
+		];
+
+		let Basket = {
+			goodList: [],
+
+			//добавить товар в корзину
+			putProduct: function(product, count) {
+				let newProduct = {
+					name: product.name,
+					price: product.price,
+					count: count
+				};
+				this.goodList.push(newProduct);
+			},
+
+			//рассчитать общее количество того, что в goodList
+			countTotalNumber: function() {
+				let totalAmount = 0;
+				for (let i = 0; i < this.goodList.length; i++) {
+					totalAmount += this.goodList[i].count;
+				}
+				return totalAmount;
+			},
+
+			//рассчитать общую стоимость того, что в goodList
+			countTotalPrice: function() {
+				let totalCost = 0;
+				for (let i = 0; i < this.goodList.length; i++) {
+					totalCost += this.goodList[i].count * this.goodList[i].price;
+				}	
+				return totalCost;
+			},
+
+			toString: function() {
+				let text = '';
+				for (var i = 0; i < this.goodList.length; i++) {
+					text += this.goodList[i].name + ' ' + this.goodList[i].price + ' руб. ' + this.goodList[i].count  + ' шт. \n';
+				}
+				return text;				
+			}
+
+		};
+
+		for (let i = 0; i < productList.length; i++) {	  
+			if (i % 2 == 0) {	//четно
+				Basket.putProduct(productList[i], 2);
+			} else {		//нечетно
+				Basket.putProduct(productList[i], 1);
+			}
+		}
+
+		console.log( "В корзине находятся следующие товары: " + Basket.toString() );
+		console.log( "Количество товаров в корзине: " + Basket.countTotalNumber() );
+		console.log( "Общая стоимость: " + Basket.countTotalPrice() );
 
 	</script>
 				
